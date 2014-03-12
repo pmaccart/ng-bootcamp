@@ -33,11 +33,23 @@ module.exports = function (grunt) {
       }
     },
 
+    jade: {
+      build: {
+        files: { 
+          "app/views/myview.html":"app/views/myview.jade"
+        }
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       less: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
         tasks: ['less']
+      },
+      jade: {
+        files: ['<%= yeoman.app %>/views/{,*/}*.jade'],
+        tasks: ['jade']
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -291,13 +303,17 @@ module.exports = function (grunt) {
       server: [
         'copy:styles',
         'less',
+        'jade'
       ],
       test: [
         'copy:styles',
-        'less'
+        'less',
+        'jade'
       ],
       dist: [
         'copy:styles',
+        'less',
+        'jade',
         'imagemin',
         'svgmin',
         'less'

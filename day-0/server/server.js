@@ -13,6 +13,18 @@ app.get('/hello.json', function(req, res) {
   });
 });
 
+var user = require('./data/user.json');
+app.get('/user', function(req, res) {
+  res.json(user);
+});
+
+var users = require('./data/users.json');
+app.get('/user/:username', function(req, res) {
+  var username = req.params.username;
+  if (users[username]) res.json(users[username]);
+  else res.send(404, "User " + username + " not found.");
+});
+
 app.use(function(req, res, next) {
   res.send(404, 'Page not found!!!');
 })

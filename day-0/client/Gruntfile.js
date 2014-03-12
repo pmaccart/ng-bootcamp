@@ -33,11 +33,23 @@ module.exports = function (grunt) {
       }
     },
 
+    jade: {
+      build: {
+        files: { 
+          "app/views/myview.html":"app/views/myview.jade"
+        }
+      }
+    },
+
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       less: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.less'],
         tasks: ['less']
+      },
+      jade: {
+        files: ['<%= yeoman.app %>/views/{,*/}*.jade'],
+        tasks: ['jade']
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
@@ -289,13 +301,19 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'less',
+        'jade'
       ],
       test: [
-        'copy:styles'
+        'copy:styles',
+        'less',
+        'jade'
       ],
       dist: [
         'copy:styles',
+        'less',
+        'jade',
         'imagemin',
         'svgmin'
       ]
@@ -370,7 +388,6 @@ module.exports = function (grunt) {
     'bower-install',
     'useminPrepare',
     'concurrent:dist',
-    'less',
     'autoprefixer',
     'concat',
     'ngmin',

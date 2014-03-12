@@ -315,7 +315,8 @@ module.exports = function (grunt) {
         'less',
         'jade',
         'imagemin',
-        'svgmin'
+        'svgmin',
+        'less'
       ]
     },
 

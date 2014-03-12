@@ -33,7 +33,6 @@ module.exports = function (grunt) {
       }
     },
 
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       less: {
@@ -369,9 +368,9 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',
-    'less',
     'useminPrepare',
     'concurrent:dist',
+    'less',
     'autoprefixer',
     'concat',
     'ngmin',

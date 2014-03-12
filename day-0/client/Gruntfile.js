@@ -33,7 +33,6 @@ module.exports = function (grunt) {
       }
     },
 
-
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       less: {
@@ -290,15 +289,18 @@ module.exports = function (grunt) {
     // Run some tasks in parallel to speed up the build process
     concurrent: {
       server: [
-        'copy:styles'
+        'copy:styles',
+        'less',
       ],
       test: [
-        'copy:styles'
+        'copy:styles',
+        'less'
       ],
       dist: [
         'copy:styles',
         'imagemin',
-        'svgmin'
+        'svgmin',
+        'less'
       ]
     },
 
@@ -369,7 +371,6 @@ module.exports = function (grunt) {
   grunt.registerTask('build', [
     'clean:dist',
     'bower-install',
-    'less',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

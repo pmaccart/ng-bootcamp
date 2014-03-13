@@ -27,6 +27,8 @@ bower install
 grunt serve
 ```
 
+This should open a new browser window pointed at http://localhost:9000/.  To make sure the project is running, open up the `variables.less` file at `day-0/client/app/styles/variables.less`, and change one of the colors.  Your browser page should automatically refresh after a few seconds, and you should see the new button color immediately appear.
+
 ### Install the server app dependencies
 
 Open up a new command prompt:

@@ -32,7 +32,7 @@ describe('ChildController', function() {
 
   it('should set the child name property on the scope', function() {
     expect(scope.childName).toBe('Child Controller');
-  })
+  });
 });
 
 describe('TwoWayDataBindingController', function() {
@@ -49,5 +49,18 @@ describe('TwoWayDataBindingController', function() {
 
     scope.clearName();
     expect(scope.model.name).toBe(null);
+  })
+});
+
+describe('RepeatAndFilterController', function() {
+  var controller, scope;
+  beforeEach(function() {
+    scope = {};
+    controller = new RepeatAndFilterController(scope);
+  });
+
+  it('should set the items property on the scope', function() {
+    expect(scope.items).toBeDefined();
+    expect(scope.items.length).toBe(3);
   })
 });

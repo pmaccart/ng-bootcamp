@@ -26,6 +26,16 @@
     <button class="btn btn-primary" ng-click="clearName(model.name)">Clear Name</button>
   </div>
 
+  <h2>Repeat and Filtering</h2>
+  <div ng-controller="RepeatAndFilterController">
+    <div>
+      <label for="search">Search: </label>
+      <input id="search" ng-model="search" />
+    </div>
+    <ul>
+      <li ng-repeat="item in items | filter:search">{{$index}}: {{item.name}}</li>
+    </ul>
+  </div>
 
 
   <script src="bower_components/angular/angular.min.js"></script>

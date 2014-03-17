@@ -15,3 +15,11 @@ function TwoWayDataBindingController($scope) {
     $scope.model.name = null;
   }
 }
+
+function RepeatAndFilterController($scope) {
+  $scope.items = [
+    {name: "Bob"},
+    {name: "Billy"},
+    {name: "Bilbo"}
+  ];
+}

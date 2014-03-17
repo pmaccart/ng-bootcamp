@@ -37,6 +37,21 @@
     </ul>
   </div>
 
+  <h2>Forms</h2>
+  <div ng-controller="MyFormController">
+    <form name="myForm" ng-submit="createUser(user.firstName, user.lastName)" novalidate>
+      <div class="form-group" ng-class="{'has-error': myForm.firstName.$invalid && myForm.firstName.$dirty, 'has-success':myForm.firstName.$valid}"> 
+        <label for="firstName">First Name: </label>
+        <input type="text" class="form-control" name="firstName" id="firstName" ng-model="user.firstName" required/>
+      </div>
+      <div class="form-group" ng-class="{'has-error': myForm.lastName.$invalid && myForm.lastName.$dirty, 'has-success':myForm.lastName.$valid}"> 
+        <label for="lastName">Last Name: </label>
+        <input type="text" class="form-control" name="lastName" id="lastName" ng-model="user.lastName" required/>
+      </div>
+      <button class="btn btn-primary" type="submit" ng-disabled="myForm.$invalid">Create User</button>
+    </form>
+  </div>
+
 
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="app/app.js"></script>

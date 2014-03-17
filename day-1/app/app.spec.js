@@ -64,3 +64,19 @@ describe('RepeatAndFilterController', function() {
     expect(scope.items.length).toBe(3);
   })
 });
+
+describe('MyFormController', function() {
+  var controller, scope, mockWindow;
+  beforeEach(function() {
+    scope = {};
+    mockWindow = {
+      alert: jasmine.createSpy('createUser')
+    };
+    controller = new MyFormController(scope, mockWindow);
+  });
+
+  it('should call alert with the first name and last name', function() {
+    scope.createUser('First', 'Last');
+    expect(mockWindow.alert).toHaveBeenCalledWith('Creating user: First Last');
+  })
+})

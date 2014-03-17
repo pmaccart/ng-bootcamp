@@ -23,3 +23,9 @@ function RepeatAndFilterController($scope) {
     {name: "Bilbo"}
   ];
 }
+
+function MyFormController($scope, $window) {
+  $scope.createUser = function(firstName, lastName) {
+    $window.alert('Creating user: ' + firstName + ' ' + lastName);
+  }
+}

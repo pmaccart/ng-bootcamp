@@ -7,6 +7,16 @@
 </head>
 <body ng-controller="MyController">
   <h1>{{'Hello ' + name}}</h1>
+
+  <h2>Scope Inheritance</h2>
+  <div ng-controller="ParentController" class="parent-controller">
+    Parent Controller Name: {{parentName}}
+    <div ng-controller="ChildController" class="child-controller">
+      Child Controller Name: {{childName}}; parent name: {{parentName}}
+    </div>
+  </div>
+
+
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="app/app.js"></script>
 </body>

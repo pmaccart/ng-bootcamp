@@ -33,4 +33,21 @@ describe('ChildController', function() {
   it('should set the child name property on the scope', function() {
     expect(scope.childName).toBe('Child Controller');
   })
-})
+});
+
+describe('TwoWayDataBindingController', function() {
+  var controller, scope;
+  beforeEach(function() {
+    scope = {};
+    controller = new TwoWayDataBindingController(scope);
+  });
+
+  it('should clear the model.name property on the scope', function() {
+    scope.model = {
+      name: "Phil"
+    };
+
+    scope.clearName();
+    expect(scope.model.name).toBe(null);
+  })
+});

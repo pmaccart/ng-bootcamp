@@ -9,3 +9,9 @@ function ParentController($scope) {
 function ChildController($scope) {
   $scope.childName = "Child Controller";
 }
+
+function TwoWayDataBindingController($scope) {
+  $scope.clearName = function() {
+    $scope.model.name = null;
+  }
+}

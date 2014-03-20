@@ -66,3 +66,16 @@ describe('BindingsAndEventsController', function() {
     expect(scope.counter).toBe(1);
   });
 });
+
+describe('MyFormController', function() {
+  var controller, scope;
+  beforeEach(function() {
+    scope = {};
+    controller = new MyFormController(scope);
+  });
+
+  it('should add message the first name and last name', function() {
+    scope.createUser('First', 'Last');
+    expect(scope.message).toBe('Added user: First Last');
+  })
+})

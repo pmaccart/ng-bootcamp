@@ -30,3 +30,9 @@ function BindingsAndEventsController($scope) {
   }
 
 }
+
+function MyFormController($scope, $window) {
+  $scope.createUser = function(firstName, lastName) {
+    $scope.message = 'Added user: ' + firstName + ' ' + lastName;
+  }
+}

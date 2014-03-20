@@ -24,6 +24,18 @@
     </ul>
   </div>
 
+  <h2>Two-way Bindings and Events</h2>
+  <div ng-controller="BindingsAndEventsController">
+    <div>
+      <input type="text" ng-model="myInput"/>
+    </div>
+    <div>The value of the input is {{myInput}}.</div>
+
+    <button type="button" ng-click="incrementCounter()">Increment</button>
+    <div>The count is {{counter}}.</div>
+  </div>
+
+
 
   <script src="bower_components/angular/angular.min.js"></script>
   <script src="app/app.js"></script>

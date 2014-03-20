@@ -47,3 +47,22 @@ describe('RepeatAndFilterController', function() {
     expect(scope.items.length).toBe(8);
   })
 });
+
+describe('BindingsAndEventsController', function() {
+  var controller, scope;
+  beforeEach(function() {
+    scope = {};
+    controller = new BindingsAndEventsController(scope);
+  });
+
+  it('should initialize the counter to 0', function() {
+    expect(scope.counter).toBe(0);
+  });
+
+  it('should increment the counter', function() {
+    expect(scope.counter).toBe(0);
+
+    scope.incrementCounter();
+    expect(scope.counter).toBe(1);
+  });
+});

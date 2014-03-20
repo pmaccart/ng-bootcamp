@@ -22,3 +22,11 @@ function RepeatAndFilterController($scope) {
     {name: "Bilbo"}
   ];
 }
+
+function BindingsAndEventsController($scope) {
+  $scope.counter = 0;
+  $scope.incrementCounter = function() {
+    $scope.counter++;
+  }
+
+}

@@ -34,3 +34,16 @@ describe('ChildController', function() {
     expect(scope.childName).toBe('Child Controller');
   });
 });
+
+describe('RepeatAndFilterController', function() {
+  var controller, scope;
+  beforeEach(function() {
+    scope = {};
+    controller = new RepeatAndFilterController(scope);
+  });
+
+  it('should set the items property on the scope', function() {
+    expect(scope.items).toBeDefined();
+    expect(scope.items.length).toBe(8);
+  })
+});

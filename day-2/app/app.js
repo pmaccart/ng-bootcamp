@@ -9,3 +9,16 @@ function ParentController($scope) {
 function ChildController($scope) {
   $scope.childName = "Child Controller";
 }
+
+function RepeatAndFilterController($scope) {
+  $scope.items = [
+    {name: "Bob"},
+    {name: "Billy"},
+    {name: "George"},
+    {name: "Alice"},
+    {name: "Sally"},
+    {name: "Jimmy"},
+    {name: "Dan"},
+    {name: "Bilbo"}
+  ];
+}

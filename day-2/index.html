@@ -53,6 +53,15 @@
     </form>
   </div>
 
+  <h2>$http</h2>
+  <div ng-controller="AjaxController">
+    <h4>Users</h4>
+    <ul>
+      <li ng-repeat="user in users">{{user.username}}: {{user.first + ' ' + user.last}}</li>
+    </ul>
+
+  </div>
+
 
 
 

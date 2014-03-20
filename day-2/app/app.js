@@ -36,3 +36,14 @@ function MyFormController($scope, $window) {
     $scope.message = 'Added user: ' + firstName + ' ' + lastName;
   }
 }
+
+function AjaxController($scope, $http, $log) {
+  $http({
+    method:'GET',
+    url: '/data/users.json'
+  }).then(function(resp) {
+    $scope.users = resp.data;
+  }, function (error) {
+    $log.error('Error fetching users.', error);
+  });
+}

@@ -12,4 +12,5 @@ Code is organized by day:
   - README: https://github.com/pmaccart/ng-bootcamp/tree/master/day-1
 
 - day-2: Directives, Two-way Bindings, Forms, $http
-  - Slides: https://gib
+  - Slides: https://github.com/pmaccart/ng-bootcamp/blob/master/slides/ng-bootcamp-day-2.pptx?raw=true
+  - README: https://github.com/pmaccart/ng-bootcamp/tree/master/day-2

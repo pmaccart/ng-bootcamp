@@ -7,5 +7,9 @@ module.exports = function (app, config) {
   app.get('/api/playlist', echonest.getPlaylist);
 
   console.log('Dist folder: %s', config.server.distFolder);
+  app.use('/', function (req, res, next) {
+    console.log('Handing request for %s', req.path);
+    next();
+  });
   app.use('/', express.static(config.server.distFolder));
 };

@@ -1,4 +1,4 @@
-angular.module('myApp', ['myControllers'])
+angular.module('myApp', ['myControllers', 'myDirectives'])
 .config(function() {
   console.log('Configuring the application');
 });
@@ -48,6 +48,17 @@ angular.module('myServices', [])
         deferred.reject(error);
       });
       return deferred.promise;
+    }
+  };
+});
+
+angular.module('myDirectives', [])
+.directive('myArtist', function() {
+  return {
+    template: '<div>{{artist.name}}</div>',
+    restrict: 'AE',
+    scope: {
+      artist: "=artist"
     }
   };
 });

@@ -1,0 +1,42 @@
+  <!doctype html>
+  <html lang="en" ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>ng-bootcamp - Day 2</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app/css/app.css" />
+  </head>
+  <body class="container" ng-controller="MyController">
+    <h1>Echonest Sample App</h1>
+    <form ng-submit="getSimilarArtists(artist)">
+      <div class="form-group">
+        <label for="artist">Enter an artist</label>
+        <input type="text" class="form-control" ng-model="artist" placeholder="Artist"/>
+      </div>
+      <div class="form-group">
+        <label>
+          <label for="imageSize">Image Size</label>
+          <select id="imageSize" ng-model="imageSize" ng-options="i for i in imageSizeOpts">
+          </select>
+        </label>
+      </div>
+      <button type="submit" class="btn btn-primary">Get Similar Artists</button>
+    </form>
+
+    <div class="panel panel-default" my-loadable loading="isLoading">
+      <div class="panel-heading">
+        <h3 class="panel-title">Artists Similar to {{artist}}</h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-3 col-xs-6" ng-repeat="a in artists">
+            <div my-artist artist="a" image-size="imageSize"></div>
+          </div>
+        </div>
+    </div>
+
+
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="app/app.js"></script>
+  </body>
+  </html>

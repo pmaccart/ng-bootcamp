@@ -1,0 +1,16 @@
+.artist {
+  padding: 8px;
+  text-align: center;
+}
+.profile-img {
+  width: 64px;
+  height: 64px;
+}
+
+.loading-img {
+  text-align:center;
+}
+
+.loading-img img { 
+  max-width: 200px;
+}

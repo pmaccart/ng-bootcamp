@@ -5,6 +5,9 @@ angular.module('myApp', ['myControllers', 'myDirectives'])
 
 angular.module('myControllers',['myServices'])
 .controller('MyController', function($scope, echonest) {
+  $scope.imageSizeOpts = ['Small', 'Large'];
+
+
   $scope.getPlaylist = function(artist) {
     echonest.getPlaylistByArtist(artist).then(function(playlist) {
       $scope.playlist = playlist;
@@ -63,6 +66,18 @@ angular.module('myDirectives', [])
     scope: {
       artist: "=artist",
       imageSize: "=imageSize"
+    }, 
+    link:function(scope, element, attrs) {
+      console.log('Running link for my-artist directive.');
+      scope.$watch('imageSize', function(newVal) {
+        if (newVal === 'Small') {
+          element.find('img').css({width: '64px', height: '64px'});
+        }
+        else {
+          element.find('img').css({width: '96px', height: '96px'});
+        }
+      });
+
     }
   };
 })

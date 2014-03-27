@@ -16,9 +16,7 @@
       <div class="form-group">
         <label>
           <label for="imageSize">Image Size</label>
-          <select id="imageSize" ng-model="imageSize">
-            <option value="small">Small</option>
-            <option value="large">Large</option>
+          <select id="imageSize" ng-model="imageSize" ng-options="i for i in imageSizeOpts">
           </select>
         </label>
       </div>
@@ -32,7 +30,7 @@
       <div class="panel-body">
         <div class="row">
           <div class="col-sm-3 col-xs-6" ng-repeat="a in artists">
-            <div my-artist artist="a" imageSize="imageSize"></div>
+            <div my-artist artist="a" image-size="imageSize"></div>
           </div>
         </div>
     </div>

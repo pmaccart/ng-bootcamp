@@ -43,7 +43,7 @@ module.exports = {
     };
 
     echonest.getSimilarArtists(params).then(function(resp) {
-      setTimeout(function() {res.json(resp);}, 5000);
+      setTimeout(function() {res.json(resp);}, 1000);
     }, function (err) {
       res.json(500, err);
     });

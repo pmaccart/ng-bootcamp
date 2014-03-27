@@ -43,6 +43,18 @@ module.exports = {
     };
 
     echonest.getSimilarArtists(params).then(function(resp) {
+      setTimeout(function() {res.json(resp);}, 5000);
+    }, function (err) {
+      res.json(500, err);
+    });
+  },
+
+  getProfile: function(req, res) {
+    var params = {
+      artist: req.query.artist
+    };
+
+    echonest.getProfile(params).then(function(resp) {
       res.json(resp);
     }, function (err) {
       res.json(500, err);

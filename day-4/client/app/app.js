@@ -14,8 +14,11 @@ angular.module('myControllers',['myServices'])
   };
 
   $scope.getSimilarArtists = function(artist) {
+    $scope.isLoading = true;
+    $scope.artists = null;
     echonest.getSimilarArtists(artist).then(function(artists) {
       $scope.artists = artists;
+      $scope.isLoading = false;
     }, function(err) {
       $log.error('Error getting similar artists', err);
     });
@@ -58,7 +61,37 @@ angular.module('myDirectives', [])
     templateUrl: 'app/templates/artist.html',
     restrict: 'AE',
     scope: {
-      artist: "=artist"
+      artist: "=artist",
+      imageSize: "=imageSize"
     }
   };
+})
+.directive('myLoadable', function() {
+  return {
+    restrict: 'A',
+    template: '<div>' + 
+    '<div ng-show="showLoading" class="loading-img"><img src="app/images/loading.gif" /></div>' + 
+    '<div ng-hide="showLoading" ng-transclude />' +
+    '</div>',
+    transclude: true,
+    scope: {
+      loading: '='
+    },
+    link:function(scope, element, attrs) {
+      function update(isLoading) {
+        if (isLoading) {
+          scope.showLoading = true;
+        }
+        else {
+          scope.showLoading = false;
+        }
+      }
+
+      scope.$watch('loading', function(newVal, oldVal) {
+        update(!!newVal);
+      });
+      update(scope.loading);
+    }
+  };
+
 });

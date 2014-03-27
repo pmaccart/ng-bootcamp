@@ -105,6 +105,30 @@ API.prototype.getSimilarArtists = function(params) {
   return deferred.promise;
 };
 
+/**
+ * Get a profile for an artist
+ * 
+ * @param params
+ *  @param params.name {string} Artist name to get a profile for
+ */
+API.prototype.getProfile = function(params) {
+  var deferred = Q.defer();
+
+  restler.get(this._baseUrl + '/artist/profile?api_key=' + this._apiKey 
+    + '&name=' + params.artist + '&format=json&bucket=biographies&bucket=songs'
+    ).on('complete', function(result) {
+     if (result instanceof Error) {
+      deferred.reject(result);
+    }
+    else {
+      deferred.resolve(result);
+    }
+  });
+
+  return deferred.promise;
+};
+
+
 module.exports = API;
 
 

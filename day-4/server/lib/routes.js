@@ -6,6 +6,7 @@ module.exports = function (app, config) {
   app.get('/api/top', echonest.top);
   app.get('/api/playlist', echonest.getPlaylist);
   app.get('/api/artists/similar', echonest.getSimilarArtists);
+  app.get('/api/artists/profile', echonest.getProfile);
 
   console.log('Dist folder: %s', config.server.distFolder);
   app.use('/', function (req, res, next) {

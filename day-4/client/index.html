@@ -13,17 +13,26 @@
         <label for="artist">Enter an artist</label>
         <input type="text" class="form-control" ng-model="artist" placeholder="Artist"/>
       </div>
+      <div class="form-group">
+        <label>
+          <label for="imageSize">Image Size</label>
+          <select id="imageSize" ng-model="imageSize">
+            <option value="small">Small</option>
+            <option value="large">Large</option>
+          </select>
+        </label>
+      </div>
       <button type="submit" class="btn btn-primary">Get Similar Artists</button>
     </form>
 
-    <div class="panel panel-default" ng-show="artists != null">
+    <div class="panel panel-default" my-loadable loading="isLoading">
       <div class="panel-heading">
         <h3 class="panel-title">Artists Similar to {{artist}}</h3>
       </div>
       <div class="panel-body">
         <div class="row">
           <div class="col-sm-3 col-xs-6" ng-repeat="a in artists">
-            <div my-artist artist="a"></div>
+            <div my-artist artist="a" imageSize="imageSize"></div>
           </div>
         </div>
     </div>

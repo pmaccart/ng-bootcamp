@@ -55,7 +55,7 @@ angular.module('myServices', [])
 angular.module('myDirectives', [])
 .directive('myArtist', function() {
   return {
-    template: '<div>{{artist.name}}</div>',
+    templateUrl: 'app/templates/artist.html',
     restrict: 'AE',
     scope: {
       artist: "=artist"

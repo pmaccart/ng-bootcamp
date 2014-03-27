@@ -3,4 +3,6 @@ build
 dist
 .tmp
 bower_components
-./sandbox
+sandbox
+
+.DS_Store

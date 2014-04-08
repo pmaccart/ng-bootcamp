@@ -17,5 +17,5 @@ angular.module('dashboard.controllers', [])
     {name: "John Anderson", phone: "555-555-5555"},
     {name: "Julie Wilson", phone: "555-555-5555"},
     {name: "Amy Jones", phone: "555-555-5555"},
-  ]
+  ];
 });

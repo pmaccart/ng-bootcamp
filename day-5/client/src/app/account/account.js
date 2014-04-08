@@ -10,28 +10,28 @@ angular.module('account', [
       views: {
         main: {
           controller: 'AccountCtrl',
-          templateUrl: 'src/app/account/account.html'  
+          templateUrl: 'src/app/account/account-template.html'  
         }
       }
     })
     .state('account.name', {
       url: '/name',
       controller: 'AccountNameCtrl',
-      templateUrl: 'src/app/account/name.html'
+      templateUrl: 'src/app/account/name-template.html'
     })
     .state('account.address', {
       url: '/address',
       controller: 'AccountAddressCtrl', 
-      templateUrl: 'src/app/account/address.html'
+      templateUrl: 'src/app/account/address-template.html'
     })
     .state('account.confirm', {
       url: '/confirm',
       controller: 'AccountConfirmCtrl',
-      templateUrl: 'src/app/account/confirm.html'
+      templateUrl: 'src/app/account/confirm-template.html'
     })
     .state('account.success', {
       url: '/success',
-      templateUrl: 'src/app/account/success.html'
+      templateUrl: 'src/app/account/success-template.html'
     });
 
 });

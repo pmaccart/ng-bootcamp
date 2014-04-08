@@ -28,5 +28,5 @@ angular.module('account.controllers', ['ui.router'])
 
   $scope.back = function() {
     $state.go('account.address');
-  }
+  };
 });

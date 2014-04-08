@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html ng-app='myApp'>
 <head>
-<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <!-- compiled CSS -->
+  
+  <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css"/>
+  
+  <link rel="stylesheet" type="text/css" href="assets/ng-bootcamp-day-5-client-0.0.0.css"/>
+  
   
   <meta charset="utf-8">
   <title>My App</title>
@@ -36,16 +41,9 @@
       <div class="col-sm-9" ui-view="main"></div>  
     </div>
   </div>
-
-  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script type="text/javascript" src="src/app/app.js"></script>
-  <script type="text/javascript" src="src/app/account/account.js"></script>
-  <script type="text/javascript" src="src/app/account/account-controllers.js"></script>
-  <script type="text/javascript" src="src/app/billing/billing-controllers.js"></script>
-  <script type="text/javascript" src="src/app/dashboard/dashboard-controllers.js"></script>
+  
+  <!-- compiled JavaScript -->
+  
 
 </body>
 </html>

@@ -19,6 +19,20 @@ angular.module('myApp', [
       }
     }
   })
+  .state('dashboard.profile', {
+    url: '/profile',
+    templateUrl: 'src/app/dashboard/profile.html',
+    controller: 'DashboardProfileCtrl'
+  })
+  .state('dashboard.contacts', {
+    url: '/contacts',      
+    templateUrl: 'src/app/dashboard/contacts.html',
+    controller: 'DashboardContactsCtrl'     
+  })
+  .state('dashboard.about', {
+    url: '/about',
+    templateUrl: 'src/app/dashboard/about.html',
+  })
   .state('billing', {
     url: '/billing',
     views: {

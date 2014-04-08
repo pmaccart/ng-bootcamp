@@ -1,0 +1,22 @@
+{
+  "name": "ng-bootcamp-day-5-client",
+  "version": "0.0.0",
+  "homepage": "https://github.com/pmaccart/ng-bootcamp",
+  "authors": [
+    "pmaccart <phil.maccart@slalom.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.16",
+    "angular-route": "~1.2.16",
+    "bootstrap": "~3.1.1",
+    "angular-bootstrap": "~0.10.0"
+  }
+}

@@ -8,18 +8,34 @@ angular.module('myApp', [
 .config(function ($stateProvider, $urlRouterProvider) {
   $stateProvider.state('dashboard', {
     url: '/dashboard',
-    templateUrl: 'src/app/dashboard/dashboard.html',
-    controller: 'DashboardCtrl'
+    views: {
+      sidebar: {
+        templateUrl: 'src/app/dashboard/dashboard-sidebar.html',
+        controller: 'DashboardSidebarCtrl'
+      },
+      main: {
+        templateUrl:'src/app/dashboard/dashboard.html',
+        controller: 'DashboardCtrl'
+      }
+    }
   })
   .state('billing', {
     url: '/billing',
-    templateUrl: 'src/app/billing/billing.html',
-    controller: 'BillingCtrl'
+    views: {
+      main: {
+        templateUrl: 'src/app/billing/billing.html',
+        controller: 'BillingCtrl'
+      }
+    }
   })
   .state('account', {
     url: '/account',
-    templateUrl: 'src/app/account/account.html',
-    controller: 'AccountCtrl'
+    views: {
+      main: {
+        templateUrl: 'src/app/account/account.html',
+        controller: 'AccountCtrl'
+      }
+    }
   });
 
   $urlRouterProvider.otherwise('/dashboard');

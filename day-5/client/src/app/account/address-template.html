@@ -1,0 +1,25 @@
+<form name="accountForm" ng-submit="next()"> 
+  <div class="form-group">
+    <label class="control-label">Address</label>
+    <input class="form-control" type="text" ng-model="model.address" placeholder="Address" required />
+  </div>
+
+  <div class="form-group">
+    <label class="control-label">City</label>
+    <input class="form-control" type="text" ng-model="model.city" placeholder="City" required />
+  </div>
+
+   <div class="form-group">
+    <label class="control-label">State</label>
+    <input class="form-control" type="text" ng-model="model.state" placeholder="State" required />
+  </div>
+
+   <div class="form-group">
+    <label class="control-label">Zip</label>
+    <input class="form-control" type="text" ng-model="model.zip" placeholder="Zip" required />
+  </div>
+
+
+  <button type="submit" class="btn btn-success">Next</button>
+  <button type="button" class="btn btn-danger" ng-click="back()">Back</button>  
+</form>

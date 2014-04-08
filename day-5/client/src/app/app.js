@@ -1,7 +1,7 @@
 angular.module('myApp', [
   'ui.bootstrap',
   'ui.router',
-  'account.controllers',
+  'account',
   'billing.controllers',
   'dashboard.controllers',
   'templates-app'
@@ -42,17 +42,8 @@ angular.module('myApp', [
         controller: 'BillingCtrl'
       }
     }
-  })
-  .state('account', {
-    url: '/account',
-    views: {
-      main: {
-        templateUrl: 'src/app/account/account-template.html',
-        controller: 'AccountCtrl'
-      }
-    }
   });
-
+  
   $urlRouterProvider.otherwise('/dashboard');
 })
 .controller('NavCtrl', function ($scope) {

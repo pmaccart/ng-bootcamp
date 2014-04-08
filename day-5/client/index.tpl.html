@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html ng-app='myApp'>
 <head>
-<link href="http://getbootstrap.com/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+  <!-- compiled CSS -->
+  <% styles.forEach( function ( file ) { %>
+  <link rel="stylesheet" type="text/css" href="<%= file %>"/>
+  <% }); %>
   
   <meta charset="utf-8">
   <title>My App</title>
@@ -31,20 +34,17 @@
   </nav>
 
   <div class="container">
+    <h1>Hello Phil!</h1>
     <div class="row">
       <div class="col-sm-3" ui-view="sidebar"></div>
       <div class="col-sm-9" ui-view="main"></div>  
     </div>
   </div>
-
-  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
-  <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
-  <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
-  <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script type="text/javascript" src="src/app/app.js"></script>
-  <script type="text/javascript" src="src/app/account/account-controllers.js"></script>
-  <script type="text/javascript" src="src/app/billing/billing-controllers.js"></script>
-  <script type="text/javascript" src="src/app/dashboard/dashboard-controllers.js"></script>
+  
+  <!-- compiled JavaScript -->
+  <% scripts.forEach( function ( file ) { %>
+  <script type="text/javascript" src="<%= file %>"></script>
+  <% }); %>
 
 </body>
 </html>

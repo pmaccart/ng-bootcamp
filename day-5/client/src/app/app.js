@@ -1,24 +1,28 @@
 angular.module('myApp', [
   'ui.bootstrap',
-  'ngRoute',
+  'ui.router',
   'account.controllers',
   'billing.controllers',
   'dashboard.controllers'
   ])
-.config(function ($routeProvider) {
-  $routeProvider.when('/dashboard', {
+.config(function ($stateProvider, $urlRouterProvider) {
+  $stateProvider.state('dashboard', {
+    url: '/dashboard',
     templateUrl: 'src/app/dashboard/dashboard.html',
     controller: 'DashboardCtrl'
   })
-  .when('/billing', {
+  .state('billing', {
+    url: '/billing',
     templateUrl: 'src/app/billing/billing.html',
     controller: 'BillingCtrl'
   })
-  .when('/account', {
+  .state('account', {
+    url: '/account',
     templateUrl: 'src/app/account/account.html',
     controller: 'AccountCtrl'
-  })
-  .otherwise({redirectTo: '/dashboard'});
+  });
+
+  $urlRouterProvider.otherwise('/dashboard');
 })
 .controller('NavCtrl', function ($scope) {
   $scope.collapse1 = true;

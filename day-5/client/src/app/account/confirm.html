@@ -1,0 +1,13 @@
+<form name="accountForm" ng-submit="next()"> 
+  <div>
+    <b>Is the information below correct?</b>
+  </div>
+
+  <div>{{model.firstName}} {{model.lastName}}</div>
+  <div>{{model.address}}</div>
+  <div>{{model.city}}, {{model.state}} {{model.zip}}</div>
+
+
+  <button type="submit" class="btn btn-success">Yes</button>
+  <button type="button" class="btn btn-danger" ng-click="back()">No</button>  
+</form>

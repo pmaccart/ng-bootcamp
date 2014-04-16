@@ -23,6 +23,6 @@ Code is organized by day:
   - Slides: https://github.com/pmaccart/ng-bootcamp/blob/master/slides/ng-bootcamp-day-4.pptx?raw=true
   - README: https://github.com/pmaccart/ng-bootcamp/tree/master/day-4
 
-- day-5: Routing, UI.Router, UI.Bootstap
+- day-5: Routing, UI.Router, UI.Bootstap, Grunt Build Process
   - Slides: https://github.com/pmaccart/ng-bootcamp/blob/master/slides/ng-bootcamp-day-5.pptx?raw=true
   - README: https://github.com/pmaccart/ng-bootcamp/tree/master/day-5
